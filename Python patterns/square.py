@@ -5,7 +5,7 @@ for i in range(n+1):
 
 print()
 
-# SQUARE BORDER PATTERN
+#  HOLLOW SQUARE PATTERN
 n=5
 for i in range(n):
     for j in range(n):
