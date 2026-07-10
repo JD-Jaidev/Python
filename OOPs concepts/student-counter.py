@@ -9,4 +9,3 @@ s2 = student('Dev')
 s3 = student('Thanish')
 
 print('total students : ',student.count)
-
