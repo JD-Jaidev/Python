@@ -1,3 +1,5 @@
+# STATIC METHOD
+
 class calc_static:
     
     @staticmethod

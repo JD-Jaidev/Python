@@ -1,3 +1,5 @@
+# POLYMORPHISM
+
 class animal:
     def eat(self):
         print('Dog eats bone')

@@ -1,3 +1,5 @@
+# CONSTRUCTOR AND INSTANCE METHODS
+
 class rectangle_calc:
     def __init__(self,length,breadth):
         self.length = length

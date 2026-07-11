@@ -1,3 +1,5 @@
+# ENCAPSULATION AND INSTANCE METHODS
+
 class BankAccount:
     def __init__(self,acc_number,acc_name,balance):
         self.acc_number = acc_number

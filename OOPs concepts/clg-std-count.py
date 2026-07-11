@@ -1,3 +1,5 @@
+# CLASS METHOD
+
 class college:
     total = 0
     def __init__(self,name):
