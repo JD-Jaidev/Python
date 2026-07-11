@@ -1,3 +1,5 @@
+# HIERARCHICAL INHERITANCE
+
 class vehicle:
     def __init__(self,brand):
         self.brand = brand
@@ -34,7 +36,7 @@ class bus(vehicle):
 
 
 car = car('BMW',5)
-bike = bike('Honda',50)
+bike = bike('Honda',)
 bus = bus('Volvo',30)
 
 print('Car details ---')
