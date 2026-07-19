@@ -30,3 +30,35 @@ date_label.pack()
 update()
 
 window.mainloop()
+
+
+'''
+
+strftime - String Format Time 
+
+Code    Meaning	Example
+-----------------------------------------------------------
+%Y	    Full year	2026
+%y	    Last two digits of year	26
+%m	    Month (01–12)	07
+%B	    Full month name	July
+%b	    Short month name	Jul
+%d	    Day of month	19
+%A	    Full weekday	Sunday
+%a	    Short weekday	Sun
+%H	    Hour (24-hour)	16
+%I	    Hour (12-hour)	04
+%M	    Minutes	45
+%S	    Seconds	30
+%p	    AM/PM	PM
+%f	    Microseconds	123456
+%j	    Day of year	200
+%U	    Week number (Sunday first)	29
+%W	    Week number (Monday first)	28
+%w	    Weekday number (Sunday=0)	0
+%c	    Complete date and time	Sun Jul 19 16:45:30 2026
+%x	    Date representation	07/19/26
+%X	    Time representation	16:45:30
+%%	    Prints a % sign	%
+
+'''
