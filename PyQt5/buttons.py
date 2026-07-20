@@ -31,3 +31,13 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+'''
+
+Signal	 |   When it is emitted
+clicked()	-  Button is clicked and released (most commonly used).
+pressed()	-  Mouse button is pressed down.
+released()	-  Mouse button is released.
+toggled(bool)	-  Only for checkable push buttons; emitted when the checked state changes.
+
+'''
