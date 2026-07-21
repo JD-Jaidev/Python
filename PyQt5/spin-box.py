@@ -13,7 +13,11 @@ class MainWindow(QMainWindow):
         self.spin.setGeometry(0,0,100,100)
         self.spin.setRange(0,3)
         self.spin.setPrefix('Hello')
-       
+        self.spin.valueChanged.connect(self.value_given)
+    
+    def value_given(self):
+        val = self.spin.text()
+        print(val)
 
 def main():
     app = QApplication(sys.argv)
