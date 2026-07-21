@@ -18,7 +18,7 @@ def update():
 
 window = Tk()
 
-window.title('Simple Calculator App')
+window.title('Simple Clock App')
 
 time_label = Label(window,font=("Arial",50),fg="#00FF00",bg="black")
 time_label.pack()
