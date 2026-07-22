@@ -1,4 +1,4 @@
-# Open File Dialog in PyQt5
+# Open File Dialog & Save File Dialog in PyQt5
 
 import sys
 from PyQt5.QtWidgets import *
@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
                                                     # toPlainText() is another QTextEdit method.
                                                     # It retrieves all the text from the QTextEdit.
                                                     # Returns it as a string.
-                                                    
+
 def main():
     app = QApplication(sys.argv)
     window = MainWindow()
