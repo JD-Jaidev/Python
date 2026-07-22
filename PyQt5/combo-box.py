@@ -1,3 +1,5 @@
+# drop down box
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QComboBox
 
