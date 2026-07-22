@@ -1,3 +1,5 @@
+# spin box used for whole numbers
+
 import sys
 from PyQt5.QtWidgets import *
 
@@ -8,6 +10,8 @@ class MainWindow(QMainWindow):
         self.setGeometry(100,100,500,500)
         self.spin = QSpinBox(self)
         self.initUI()
+
+# we can also do this using a central widget and then vbox layout. add the spin widget to vbox layout. add the vbox layout to the central widget. 
 
     def initUI(self):
         self.spin.setGeometry(0,0,100,100)
