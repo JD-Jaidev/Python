@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
         )
         if filename:
             with open(filename, "r") as file: # readingg contents from file
-                self.text.setPlainText(file.read())
+                self.text.setPlainText(file.read()) # Reads all the text from the file. Displays that text inside the QTextEdit widget.
 
     def save_file(self): # save file dialog
         filename, _ = QFileDialog.getSaveFileName(
@@ -38,8 +38,11 @@ class MainWindow(QMainWindow):
         )
         if filename:
             with open(filename, "w") as file: # write contents into file
-                file.write(self.text.toPlainText())
-
+                file.write(self.text.toPlainText()) # Takes the text currently inside the QTextEdit. Writes that text into the file.
+                                                    # toPlainText() is another QTextEdit method.
+                                                    # It retrieves all the text from the QTextEdit.
+                                                    # Returns it as a string.
+                                                    
 def main():
     app = QApplication(sys.argv)
     window = MainWindow()
