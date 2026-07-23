@@ -48,6 +48,22 @@ if __name__ == '__main__':
 
 '''
 
+Method	-  Purpose
+setValue()	-  Set the current value.
+value()	-  Get the current value.
+setRange()	-  Set minimum and maximum values.
+setMinimum()	-  Set the minimum value.
+setMaximum()	-  Set the maximum value.
+setSingleStep()	-  Set the increment/decrement amount.
+setDecimals()	-  Set the number of decimal places.
+setPrefix()	-  Add text before the value.
+setSuffix()	-  Add text after the value.
+setAlignment()	-  Align the displayed text.
+setWrapping()	-  Enable circular increment/decrement.
+setReadOnly()	-  Make the widget read-only.
+cleanText()	-  Get only the numeric text without prefix/suffix.
+text()	-  Get the displayed text with prefix/suffix.
+
 Signal	-  Purpose
 valueChanged(float)	-  Value changes, the float is the type of signal emitted
 textChanged(str)	-  Displayed text changes
