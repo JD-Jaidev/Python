@@ -47,3 +47,30 @@ window = Window()
 window.show()
 
 sys.exit(app.exec_())
+
+'''
+
+QDateEdit Methods
+
+Method	-  Description
+setDate()	-  Sets the current date.
+date()	-  Returns the selected date.
+setMinimumDate()	-  Sets the minimum selectable date.
+minimumDate()	-  Returns the minimum date.
+setMaximumDate()	-  Sets the maximum selectable date.
+maximumDate()	-  Returns the maximum date.
+setDateRange()	-  Sets the minimum and maximum dates.
+setDisplayFormat()	-  Sets the display format of the date.
+displayFormat()	-  Returns the current display format.
+setCalendarPopup()	-  Enables or disables the calendar popup.
+calendarPopup()	-  Returns whether the calendar popup is enabled.
+clear()	-  Clears or resets the editor.
+
+QDateEdit Signals
+
+Signal	-  Description
+dateChanged()	-  Emitted when the date changes.
+dateTimeChanged()	-  Emitted when the internal date/time changes.
+editingFinished()	-  Emitted when editing is completed.
+
+'''
