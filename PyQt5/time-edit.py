@@ -47,3 +47,29 @@ window = Window()
 window.show()
 
 sys.exit(app.exec_())
+
+'''
+
+QTimeEdit Methods
+
+Method	-  Description
+----------------------------------------------------------------------------------
+setTime(QTime)	-  Sets the current time.
+time()	-  Returns the selected time.
+setMinimumTime(QTime)	-  Sets the minimum selectable time.
+minimumTime()	-  Returns the minimum time.
+setMaximumTime(QTime)	-  Sets the maximum selectable time.
+maximumTime()	-  Returns the maximum time.
+setTimeRange(QTime, QTime)	-  Sets the minimum and maximum times.
+setDisplayFormat(str)	-  Sets the display format of the time.
+displayFormat()	-  Returns the current display format.
+clear()	-  Clears or resets the editor.
+
+QTimeEdit Signals
+----------------------------------------------------------------------------------
+Signal	-  Description
+timeChanged(QTime)	-  Emitted when the time changes.
+dateTimeChanged(QDateTime)	-  Emitted when the internal date/time changes.
+editingFinished()	-  Emitted when editing is completed.
+
+'''
