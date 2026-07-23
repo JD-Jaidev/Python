@@ -57,3 +57,79 @@ window = Window()
 window.show()
 
 sys.exit(app.exec_())
+
+'''
+
+# QDateTimeEdit Methods
+
+Method	-  Description
+----------------------------------------------------------------------------------
+setDateTime(QDateTime)	-  Sets both the date and time.
+dateTime()	-  Returns the current date and time.
+setDate(QDate)	-  Sets only the date.
+date()	-  Returns only the date.
+setTime(QTime)	-  Sets only the time.
+time()	-  Returns only the time.
+setMinimumDate(QDate)	-  Sets the minimum selectable date.
+setMaximumDate(QDate)	-  Sets the maximum selectable date.
+setDateRange(QDate, QDate)	-  Sets the date range.
+setMinimumTime(QTime)	-  Sets the minimum selectable time.
+setMaximumTime(QTime)	-  Sets the maximum selectable time.
+setTimeRange(QTime, QTime)	-  Sets the time range.
+setMinimumDateTime(QDateTime)	-  Sets the minimum selectable date and time.
+setMaximumDateTime(QDateTime)	-  Sets the maximum selectable date and time.
+setDateTimeRange(QDateTime, QDateTime)	-  Sets the minimum and maximum date and time.
+setDisplayFormat(str)	-  Sets the display format.
+displayFormat()	-  Returns the current display format.
+setCalendarPopup(bool)	-  Enables or disables the calendar popup.
+calendarPopup()	-  Returns whether the calendar popup is enabled.
+clear()	-  Clears or resets the editor.
+
+
+
+# QDateTimeEdit Signals
+
+Signal	-  Description
+----------------------------------------------------------------------------------
+dateChanged(QDate)	Emitted when the date changes.
+timeChanged(QTime)	Emitted when the time changes.
+dateTimeChanged(QDateTime)	Emitted when the date or time changes.
+editingFinished()	Emitted when editing is completed.
+
+
+
+# QDate Methods
+
+Method	-  Description
+----------------------------------------------------------------------------------
+currentDate()	-  Returns the current system date.
+day()	-  Returns the day of the month.
+month()	-  Returns the month number.
+year()	-  Returns the year.
+dayOfWeek()	-  Returns the day of the week (1–7).
+dayOfYear()	-  Returns the day number within the year.
+daysInMonth()	-  Returns the number of days in the current month.
+daysInYear()	-  Returns the number of days in the current year.
+isValid()	-  Checks if the date is valid.
+toString()	-  Converts the date to a formatted string.
+addDays()	-  Returns a new date after adding days.
+addMonths()	-  Returns a new date after adding months.
+addYears()	-  Returns a new date after adding years.
+
+
+
+# QTime Methods
+
+Method	-  Description
+----------------------------------------------------------------------------------
+currentTime()	-  Returns the current system time.
+hour()	-  Returns the hour.
+minute()	-  Returns the minute.
+second()	-  Returns the second.
+msec()	-  Returns the milliseconds.
+isValid()	-  Checks if the time is valid.
+toString()	-  Converts the time to a formatted string.
+addSecs()	-  Returns a new time after adding seconds.
+addMSecs()	-  Returns a new time after adding milliseconds.
+
+'''
