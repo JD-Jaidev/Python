@@ -53,6 +53,7 @@ if __name__ == "__main__":
     main()
 
 '''
+# Example code - 
 
 # Parameters - 
 QFileDialog.getOpenFileName(
