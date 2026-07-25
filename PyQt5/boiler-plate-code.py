@@ -1,3 +1,7 @@
+# Boiler plate code in PyQt5. This code structure is the same for every program
+# Boilerplate code is pre-written, reusable code that you include at the beginning of a program 
+# or file to set up the basic structure before writing the actual logic.
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
