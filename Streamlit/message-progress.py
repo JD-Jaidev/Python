@@ -11,6 +11,8 @@ st.warning('Warning',icon = '📈') # Displays a yellow warning message.
 st.toast('Hello',icon = '📈') # Displays a small temporary notification. Disappears automatically.
 st.progress(75,text = 'Loading') # Shows how much work has been completed.
 
+#----------------------------------------------------------------------------------------------------------------------
+
 # Eg program for progress - 
 
 progress = st.progress(0)
@@ -18,12 +20,16 @@ for i in range(101):
     time.sleep(0.05)
     progress.progress(i,text = f'Loading : {i}')
 
+#----------------------------------------------------------------------------------------------------------------------
+
 st.spinner() # Shows a loading spinner while code is running. Used when you don't know the exact progress percentage. 
 
 # Eg - 
 with st.spinner(text="Loading..."):
     time.sleep(3)
 st.success('Doneee',icon = '📈')
+
+#----------------------------------------------------------------------------------------------------------------------
 
 st.status('Finished') # Displays the status of a multi-step process. Unlike spinner, it can show each stage of the task.
 
@@ -38,6 +44,7 @@ with st.status(
     time.sleep(2)
 st.success("Finished!")
 
+#----------------------------------------------------------------------------------------------------------------------
 
 with st.status(
     "Working...",
@@ -56,6 +63,8 @@ with st.status(
         expanded = False
     )
 
+#----------------------------------------------------------------------------------------------------------------------
+
 st.empty() # Creates an empty placeholder that can later display or replace content.
 
 # Eg - 
@@ -64,3 +73,4 @@ placeholder.write("Loading...")
 time.sleep(2)
 placeholder.success("Completed!")
 
+#----------------------------------------------------------------------------------------------------------------------
