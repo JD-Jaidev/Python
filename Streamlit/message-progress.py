@@ -21,6 +21,7 @@ for i in range(101):
     progress.progress(i,text = f'Loading : {i}')
 
 #----------------------------------------------------------------------------------------------------------------------
+# SPINNER
 
 st.spinner() # Shows a loading spinner while code is running. Used when you don't know the exact progress percentage. 
 
@@ -30,6 +31,7 @@ with st.spinner(text="Loading..."):
 st.success('Doneee',icon = '📈')
 
 #----------------------------------------------------------------------------------------------------------------------
+# STATUS
 
 st.status('Finished') # Displays the status of a multi-step process. Unlike spinner, it can show each stage of the task.
 
@@ -64,6 +66,7 @@ with st.status(
     )
 
 #----------------------------------------------------------------------------------------------------------------------
+# EMPTY
 
 st.empty() # Creates an empty placeholder that can later display or replace content.
 
