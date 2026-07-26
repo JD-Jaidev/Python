@@ -1,9 +1,9 @@
 # INTRODUCTION TO STREAMLIT - Streamlit is an open-source Python framework used to build interactive web applications entirely using Python. 
 # It is especially popular among data scientists, AI/ML engineers, and Python developers because you don't need to learn HTML, CSS, or JavaScript to create a web interface.
 
-import streamlit as st
+# TEXT DISPLAY WIDGETS - These widgets are used to display text, formatted content, code, equations, and important information on your Streamlit app. 
 
-# 1. Text display widgets
+import streamlit as st
 
 st.title('First Streamlit program.') # Displays the main title of your Streamlit application.
 st.write('This a text.') # The most versatile display func. It can display almost everything,
