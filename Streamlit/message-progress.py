@@ -77,3 +77,15 @@ time.sleep(2)
 placeholder.success("Completed!")
 
 #----------------------------------------------------------------------------------------------------------------------
+# ECHO
+
+st.echo() # It is mainly used to display the Python code being executed while also running it.
+
+# Eg - 
+st.title("st.echo() Example")
+with st.echo():
+    x = 10
+    y = 20
+    st.write("Sum =", x + y)
+
+#----------------------------------------------------------------------------------------------------------------------
