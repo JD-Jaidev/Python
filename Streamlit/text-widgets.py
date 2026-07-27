@@ -19,3 +19,17 @@ st.html() # Displays custom HTML inside """.
 st.json() # Displays json in a readable format.
 st.metric() # Shows KPI (Key performance indicator), useful in dashboards.
 st.badge('AI',color = 'blue') # Displays a small colored label (badge) to highlight status or categories.
+
+# CHAT MESSAGE
+
+st.chat_message('Chat messages')
+with st.chat_message(
+    "Jaidev",
+    avatar="🧑‍💻"
+):
+    st.write("Hello!")
+with st.chat_message(
+    "AI",
+    avatar="🤖"
+):
+    st.write("Welcome!")
