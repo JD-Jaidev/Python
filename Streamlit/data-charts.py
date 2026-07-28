@@ -164,3 +164,76 @@ ax.plot([1,2,3],[3,5,7])
 st.pyplot(fig)
 
 #-------------------------------------------------------------------------------------------------------------------------
+
+# PLOTLY
+st.write('---------------------------- PLOTLY')
+
+# st.plotly_chart() # Displays interactive Plotly charts. Uses - Dashboard and Interactive analysis
+# fig → The entire figure (window/canvas)
+# ax → The plotting area (axes) where the graph is drawn
+
+'''st.plotly_chart(
+    figure = '<canvas>',
+    use_container_width=False
+)'''
+
+# Eg -
+import plotly.express as px
+
+fig = px.bar(
+    x = ["A","B","C"],
+    y = [5,7,4]
+)
+st.plotly_chart(fig)
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+# ALTAIR
+st.write('---------------------------- ALTAIR')
+
+# st.altair_chart() # Displays Altair charts. Uses - Statistical visualization and Interactive charts
+
+# Eg - 
+import altair as alt
+
+df = pd.DataFrame({
+    "x":[1,2,3],
+    "y":[4,5,6]
+})
+chart = alt.Chart(df).mark_line().encode(
+    x="x",
+    y="y"
+)
+st.altair_chart(chart)
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+# GRAPHVIZ CHART
+st.write('---------------------------- GRAPHVIZ')
+
+# st.graphviz_chart() # Displays Graphviz diagrams. Uses - Flowcharts, Decision trees, Network diagrams
+
+# Eg - 
+st.graphviz_chart("""
+digraph { # directed graph
+A -> B
+B -> C
+C -> D
+}
+""")
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+# MAP
+st.write('---------------------------- MAP')
+
+# st.map() # Displays points on a map. Uses - Delivery tracking, GPS, Store locations
+
+# Eg - 
+df = pd.DataFrame({
+    "lat":[13.0827],
+    "lon":[80.2707]
+})
+st.map(df)
+
+#-------------------------------------------------------------------------------------------------------------------------
