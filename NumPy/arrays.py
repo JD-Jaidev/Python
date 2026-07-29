@@ -184,3 +184,240 @@ arr12 = np.array([
 print(f'\n{arr12}')
 print('Shape : ',arr12.shape)
 
+#------------------------------------------------------------------------------------------------------------------------------
+
+# ---> Array attributes - 
+print(f'\nArray attributes')
+
+'''
+
+Array attributes are built-in properties of a NumPy array that provide information about the array itself. They tell you things like:
+
+- What is its shape?
+- How many dimensions does it have?
+- How many elements are stored?
+- What type of data is stored?
+- How much memory does it use?
+Unlike methods (such as reshape() or sort()), attributes do not use parentheses.
+
+'''
+# Eg -
+
+array1 = np.array([
+    [10, 20, 30],
+    [40, 50, 60]
+])
+
+array2 = np.array([
+    [
+        [10,20,30],
+        [40,50,60]
+    ],
+    [
+        [70,80,90],
+        [100,True,120]
+    ]
+])
+
+# 1. array.shape - shape tells you the number of rows and columns (or size of each dimension) of the array. It returns a tuple.
+
+print(f'\nShape : {array1.shape}')
+print(f'\nShape : {array2.shape}')
+
+# 2. array.ndim - ndim tells you how many dimensions (axes) an array has.
+
+print(f'\nDimen : {array1.ndim}')
+print(f'\nDimen : {array2.ndim}')
+
+# 3. arrary.size - size tells you the total number of elements in the array.
+
+print(f'\nSize : {array1.size}')
+print(f'\nSize : {array2.size}')
+
+# 4. array.dtype - dtype stands for Data Type.
+
+# It tells you what type of data every element in the array stores.
+
+# Eg -
+# int32
+# int64
+# float32
+# float64
+# bool
+# complex128
+
+print(f'\ndtype : {array1.dtype}')
+print(f'\ndtype : {array2.dtype}')
+
+# Different data types use different amounts of memory and affect computation speed.
+
+# 5. array.itemsize - itemsize tells you how many bytes one element occupies.
+
+print(f'\nItemsize : {array1.itemsize}')
+print(f'\nItemsize : {array2.itemsize}')
+
+# dtype = int64
+# 64 bits = 8 bytes so each integer occupies 8 bytes
+
+# 6. array.nbytes - nbytes tells you the total memory used by the array.
+
+print(f'\nnbytes : {array1.nbytes}')
+print(f'\nnbytes : {array2.nbytes}')
+
+# 7. array.T - T stands for Transpose. Coverts rows to columns and vice versa
+
+print(f'\nT : {array1.T}')
+print(f'\nT : {array2.T}')
+
+# 8. array.flags - flags provides information about how the array is stored in memory, such as whether it is contiguous and whether it is writable.
+
+print(f'\nFlags : {array1.flags}')
+print(f'\nFlags : {array2.flags}')
+
+'''
+
+1. C_CONTIGUOUS : True - This tells you whether the array is stored in C-style (row-major) order.
+2. F_CONTIGUOUS : False - This checks whether the array is stored in Fortran-style (column-major) order.
+3. OWNDATA : True - This tells you whether the array owns its own memory.
+4. WRITEABLE : True - This tells whether the array can be modified.
+5. ALIGNED : True - This tells whether the data is stored at proper memory boundaries for your computer's processor.
+6. WRITEBACKIFCOPY : False - This is an advanced flag. It tells NumPy whether the array is a temporary copy that must be copied back to another array after modifications.
+
+'''
+
+# 9. array.flat - flat returns an iterator that lets you access every element in the array one by one, regardless of its
+
+for value1 in arr.flat:
+    print(f'\nValue1 : {value1}')
+
+for value2 in arr.flat:
+    print(f'\nValue2 : {value2}')
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# ---> Datatypes -
+print(f'\nArray datatypes')
+
+'''
+
+A data type (dtype) tells NumPy what kind of data is stored in each element of an array.
+Every element in a NumPy array has the same data type. This is one of the reasons NumPy is much faster and more memory-efficient than Python lists.
+
+Why are Data Types Important?
+
+Data types determine:
+
+ -The kind of values the array can store (integers, decimals, booleans, etc.)
+- How much memory each element uses
+- The speed of computations
+
+For example:
+
+- int32 uses 4 bytes per element.
+- int64 uses 8 bytes per element.
+
+If you have millions of numbers, choosing the right data type can save a lot of memory.
+
+'''
+
+# 1. int32 - Stores 32-bit integers (whole numbers).
+# Size: 4 bytes
+# Range: −2,147,483,648 to 2,147,483,647
+
+dt1 = np.array([10, 20, 30], dtype=np.int32)
+
+print(f'\n{dt1}')
+print(f'DATATYPE : {dt1.dtype}')
+
+# 2. int64 - Stores 64-bit integers.
+# Size: 8 bytes
+# Can store much larger integers than int32
+
+dt2 = np.array([10000000000, 20000000000], dtype = np.int64)
+
+print(f'\n{dt2}')
+print(f'DATATYPE : {dt2.dtype}')
+
+# 3. float32 (most importtant in AI) - Stores 32-bit floating-point (decimal) numbers.
+# Size: 4 bytes
+# Faster and uses less memory than float64
+
+dt3 = np.array([1.5, 2.7, 3.9], dtype = np.float32)
+
+print(f'\n{dt3}')
+print(f'DATATYPE : {dt3.dtype}')
+
+# Most deep learning libraries (such as TensorFlow and PyTorch) use float32 by default because it provides a good balance between speed, memory usage, and numerical precision.
+
+# 4. float64 - Stores 64-bit floating-point (decimal) numbers.
+# Size: 8 bytes
+# More precise than float32
+# Uses more memory
+
+dt4 = np.array([1.5, 2.7, 3.9], dtype = np.float64)
+
+print(f'\n{dt4}')
+print(f'DATATYPE : {dt4.dtype}')
+
+# 5. bool - Stores Boolean values: True, False
+
+dt5 = np.array([True, False, True])
+
+print(f'\n{dt5}')
+print(f'DATATYPE : {dt5.dtype}')
+
+
+# Changing the Data Type - You can convert an existing array to another data type using astype().
+
+datatype = np.array([1, 2, 3])
+new_arr = datatype.astype(np.float32)
+print(f'\n{new_arr}')
+print(f'New data type : {new_arr.dtype}')
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# ---> Array indexing - Array indexing is the process of accessing one or more specific elements from a NumPy array using their position (index).
+# indexing starts with 0
+
+ind1 = np.array([10,20,30,40,50])
+
+ind2 = np.array([
+    [10, 20, 30],
+    [40, 50, 60]
+])
+
+ind3 = np.array([
+    [
+        [10,20,30],
+        [40,50,60]
+    ],
+    [
+        [70,80,90],
+        [100,110,120]
+    ]
+])
+
+# 1. Positive indexing  -
+print(f'\nPositive Indexing : {ind1[4]}')
+
+# 2. Negative indexing  -
+print(f'\nNegative Indexing : {ind1[-2]}')
+
+# 3. 1D array indexing  -
+print(f'\n1D array Indexing : {ind1[3]}')
+
+# 4. 2D array indexing  - array[row,colm]
+print(f'\n2D array Indexing : {ind2[1,1]}')
+
+# 5. 3D array indexing  - array(layer,row,colm)
+print(f'\n3D array Indexing : {ind3[1,0,2]}')
+
+# 6. Boolean indexing - Boolean indexing selects elements based on a condition.
+print(f'\nBoolean Indexing : {ind3[ind3 > 50]}') # gives a single list of values
+
+# 7. Fancy (Advanced) Indexing - Fancy indexing lets you access multiple specific elements at once using an array or list of indices.
+print(f'\n2D array Fancy Indexing : {ind2[[0,1]]}')
+print(f'\n3D array Fancy Indexing : {ind3[[1,0]]}')
+
+#------------------------------------------------------------------------------------------------------------------------------
+
