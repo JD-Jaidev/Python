@@ -378,6 +378,7 @@ print(f'New data type : {new_arr.dtype}')
 
 # ---> Array indexing - Array indexing is the process of accessing one or more specific elements from a NumPy array using their position (index).
 # indexing starts with 0
+print(f'\nArray Indexing')
 
 ind1 = np.array([10,20,30,40,50])
 
@@ -421,3 +422,35 @@ print(f'\n3D array Fancy Indexing : {ind3[[1,0]]}')
 
 #------------------------------------------------------------------------------------------------------------------------------
 
+# ---> Array slicing - 
+print(f'\nArray slicing')
+
+# Array slicing is the process of extracting a portion (subset) of an array instead of accessing a single element.
+# Indexing → Gets one element
+# Slicing → Gets multiple elements
+# array[start : end : step]
+# The colon (:) is the slicing operator.
+
+slice = np.array([10,20,30,40,50])
+print(f'Slicing in 1D array : {slice[1:4:2]}')
+print(f'Slicing in 1D array : {slice[::-1]}') # reverse
+
+slice2 = np.array([
+    [10, 20, 30],
+    [40, 50, 60]
+])
+
+slice3 = np.array([
+    [
+        [10,20,30],
+        [40,50,60]
+    ],
+    [
+        [70,80,90],
+        [100,110,120]
+    ]
+])
+
+print(f'\nSlicing in a 2D array : {slice2[0:1,1:2]}') # [row,colm] the stop value is exclusive
+
+print(f'\nSlicing in a 3D array : {slice3[0:1,1:2,1:2]}') # [layer,row,colm]
