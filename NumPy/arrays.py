@@ -669,3 +669,93 @@ print(f'\nColumns grouped : {result}')
 
 # Searching - Searching functions in NumPy help you find elements or positions in an array based on a condition.
 print(f'\nArray searching ------------------------------------------------------------------------------------------------------------------------------')
+
+# 1. np.where(condition) - Returns the indices (positions) of elements that satisfy a condition.
+
+arr = np.array([10, 20, 30, 40, 50])
+result = np.where(arr > 25)
+print(f'\nWhere : {result}')
+
+arr = np.array([[10, 20],
+                [30, 40]])
+print(f'\nFor 2D array : {np.where(arr > 20)}')
+
+# Value	    Row	Column
+# 30	    1	0
+# 40	    1	1
+
+# 2. np.argwhere(condition) - Returns the coordinates (row, column, etc.) of elements satisfying a condition. Unlike where(), the result is easier to read.
+
+arr = np.array([[10, 20],
+                [30, 40]])
+print(f'\nArgwhere : {np.argwhere(arr > 20)}')
+
+arr = np.array([10,20,30,40,50])
+print(f'\nArgwhere : {np.argwhere(arr > 20)}')
+
+# 3. np.nonzero(array) - Returns the indices of all non-zero elements. Zero is treated as False.
+
+arr = np.array([0, 5, 0, 8, 10])
+print(f'\nNonZero : {np.nonzero(arr)}')
+
+
+arr = np.array([[0, 2],
+                [3, 0]])
+print(f'\nNonZero : {np.nonzero(arr)}')
+
+'''
+
+Function	            -   Returns	                            -  Typical Use
+np.where(condition)	    -    Indices where condition is True	-  Search using a condition
+np.argwhere(condition)	-   Coordinates of matching elements	-  Readable positions in multi-dimensional arrays
+np.nonzero(array)	    -    Indices of non-zero elements	    -  Find all non-zero values
+
+'''
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Sorting - Sorting is used to arrange elements in ascending or descending order. In AI and Data Science, sorting is commonly used to rank predictions, organize data, and find the top or bottom values.
+print(f'\nArray sorting ------------------------------------------------------------------------------------------------------------------------------')
+
+# 1. np.sort(array,axis) - Returns a new sorted array without modifying the original array. 
+# axis=-1 (default): Sorts along the last axis, axis=0: Sorts each column, axis=1: Sorts each row.
+# both methods doesnt change the original array.
+
+arr = np.array([30, 10, 50, 20, 40])
+sorted_arr = np.sort(arr)
+print(f'\nSorted array : {sorted_arr}')
+
+# 2D row wise
+arr = np.array([[30, 10, 20],
+                [60, 40, 50]])
+print(f'\nSorted 2D row wise : {np.sort(arr)}')
+
+# 2D colm wise
+arr = np.array([[30, 40],
+                [20, 25]])
+print(f'\nSorted 2D colm wise : {np.sort(arr, axis=0)}')
+
+# Descending order
+arr = np.array([30, 10, 50, 20])
+print(f'\nSorted descending : {np.sort(arr)[::-1]}')
+
+# 2. np.argsort(array) - Returns the indices that would sort the array, not the sorted values themselves.
+
+arr = np.array([30, 10, 50, 20])
+print(f'\nArgsort : {np.argsort(arr)}')
+
+arr = np.array([30, 10, 50, 20])
+indices = np.argsort(arr)
+print(f'\nSorted array printed using indices : {arr[indices]}')
+
+# Eg - 
+probabilities = np.array([0.15, 0.80, 0.03, 0.02])
+predicted_class = np.argsort(probabilities)[-1]
+print(f'\nPredicted class : {predicted_class}')
+
+'''
+
+Here, np.argsort() finds the index of the highest probability, which corresponds to the model's predicted class. 
+This is a common pattern in machine learning and deep learning when working with prediction scores.
+
+'''
