@@ -202,3 +202,41 @@ Signal processing
 
 # Trigonometric functions
 print(f'\nTrigonometric functions ------------------------------------------------------------------------------------------------------------------------------')
+
+# Trigonometric functions in NumPy perform element-wise trigonometric calculations on arrays.
+# Important: NumPy expects angles in radians, not degrees. To convert degrees to radians, use : np.radians(degrees)
+
+# 1. np.sin(array) - Returns the sine of each angle.
+
+angles = np.array([0, 30, 45, 60, 90])
+radians = np.radians(angles)
+
+print(f'\nSin() : {np.sin(radians)}')
+
+'''
+Use in AI :
+Signal processing
+Robotics
+Computer graphics
+''' 
+
+# 2. np.cos(array) - Returns the cosine of each angle.
+
+angles = np.array([0, 30, 45, 60, 90])
+radians = np.radians(angles)
+print(f'\nCos() : {np.cos(radians)}')
+
+'''
+Use in AI : 
+Image processing
+Robotics
+Computer vision
+'''
+
+# 2. np.tan(array) - Returns the tangent of each angle.
+
+angles = np.array([0, 30, 45, 60])
+radians = np.radians(angles)
+print(f'\nTan() : {np.tan(radians)}')
+
+#------------------------------------------------------------------------------------------------------------------------------
