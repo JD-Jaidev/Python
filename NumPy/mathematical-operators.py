@@ -115,4 +115,90 @@ print(f'\nExponential & Logarithmic functions ----------------------------------
 # Exponential and logarithmic functions in NumPy perform mathematical operations element-wise on every array element.
 # These functions are used extensively in AI, Machine Learning, Deep Learning, and Data Science, especially in activation functions, probability, and loss functions.
 
-# 1. 
+# 1. np.exp(array) - Returns e raised to the power of each element. Here, e ≈ 2.71828 (Euler's number).
+
+a = np.array([1, 2, 3])
+print(f'\nExp : {np.exp(a)}')
+
+'''
+
+Explanation:
+e¹ = 2.718
+e² = 7.389
+e³ = 20.086
+
+Use in AI: 
+Softmax activation
+Sigmoid activation
+Probability calculations
+
+'''
+
+# 2. np.log(array) - Returns the natural logarithm (base e) of each element. It is the inverse of np.exp().
+
+b = np.array([1, np.e, np.e**2])
+print(f'\nLog : {np.log(b)}')
+
+'''
+
+Explanation:
+ln(1) = 0
+ln(e) = 1
+ln(e²) = 2
+
+Use in AI: 
+Cross-Entropy Loss
+Log Loss
+Probability computations
+
+Note: Logarithms are only defined for positive numbers. Using 0 or negative values results in -inf or nan.
+
+'''
+
+# 3. np.log2(array) - Returns the logarithm with base 2.
+
+b = np.array([1, 2, 4, 8, 16])
+print(f'\nLog2 : {np.log2(b)}')
+
+'''
+
+Explanation:
+log₂(1) = 0
+log₂(2) = 1
+log₂(4) = 2
+log₂(8) = 3
+log₂(16) = 4
+
+Use in AI:
+Information theory
+Entropy calculations
+Binary-related computations
+
+'''
+
+# 4. np.log10(array) - Returns the logarithm with base 10.
+
+b = np.array([1, 10, 100, 1000])
+print(f'\nLog10 : {np.log10(b)}')
+
+'''
+
+Explanation:
+log₁₀(1) = 0
+log₁₀(10) = 1
+log₁₀(100) = 2
+log₁₀(1000) = 3
+
+Use in AI:
+Scientific calculations
+Data visualization
+Signal processing
+
+'''
+
+# np.exp() and np.log() are inverse operations.
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Trigonometric functions
+print(f'\nTrigonometric functions ------------------------------------------------------------------------------------------------------------------------------')
