@@ -59,7 +59,7 @@ print(f"{array.nbytes} bytes")
 #------------------------------------------------------------------------------------------------------------------------------
 
 # ---> Array creation
-print(f'\nArray creation')
+print(f'\nArray creation ------------------------------------------------------------------------------------------------------------------------------')
 
 # 1. np.array() # Creates a NumPy array from an existing Python list, tuple, or other iterable.
 
@@ -104,7 +104,7 @@ print(f'\n{arr7}')
 #------------------------------------------------------------------------------------------------------------------------------
 
 # ---> Array dimensions - 
-print(f'\nArray dimensions')
+print(f'\nArray dimensions ------------------------------------------------------------------------------------------------------------------------------')
 
 '''
 
@@ -187,7 +187,7 @@ print('Shape : ',arr12.shape)
 #------------------------------------------------------------------------------------------------------------------------------
 
 # ---> Array attributes - 
-print(f'\nArray attributes')
+print(f'\nArray attributes ------------------------------------------------------------------------------------------------------------------------------')
 
 '''
 
@@ -296,7 +296,7 @@ for value2 in arr.flat:
 #------------------------------------------------------------------------------------------------------------------------------
 
 # ---> Datatypes -
-print(f'\nArray datatypes')
+print(f'\nArray datatypes ------------------------------------------------------------------------------------------------------------------------------')
 
 '''
 
@@ -378,7 +378,7 @@ print(f'New data type : {new_arr.dtype}')
 
 # ---> Array indexing - Array indexing is the process of accessing one or more specific elements from a NumPy array using their position (index).
 # indexing starts with 0
-print(f'\nArray Indexing')
+print(f'\nArray Indexing ------------------------------------------------------------------------------------------------------------------------------')
 
 ind1 = np.array([10,20,30,40,50])
 
@@ -423,7 +423,7 @@ print(f'\n3D array Fancy Indexing : {ind3[[1,0]]}')
 #------------------------------------------------------------------------------------------------------------------------------
 
 # ---> Array slicing - 
-print(f'\nArray slicing')
+print(f'\nArray slicing ------------------------------------------------------------------------------------------------------------------------------')
 
 # Array slicing is the process of extracting a portion (subset) of an array instead of accessing a single element.
 # Indexing → Gets one element
@@ -454,3 +454,160 @@ slice3 = np.array([
 print(f'\nSlicing in a 2D array : {slice2[0:1,1:2]}') # [row,colm] the stop value is exclusive
 
 print(f'\nSlicing in a 3D array : {slice3[0:1,1:2,1:2]}') # [layer,row,colm]
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# ---> Reshaping in arrays - Reshaping means changing the shape (dimensions) of an array without changing its data.
+print(f'\nArray reshaping ------------------------------------------------------------------------------------------------------------------------------')
+
+
+# 1. array.reshape(new_shape)  - changes the shape of an array without changing its data.
+resh = np.array([10,20,30,40])
+new_resh = resh.reshape(2,2)
+print(f'\nReshaped : {new_resh}')
+
+# 2. array.flatten() - converts any multi-dimensional array into a 1D array.
+# It returns a copy.
+# So changing the flattened array does not affect the original array.
+
+resh2 = np.array([
+    [10,20,30],
+    [40,50,60]
+])
+new_resh2 = resh2.flatten()
+print(f'\nFlattened : {new_resh2}')
+new_resh2[0] = 100
+print(f'\nOriginal : {resh2}')
+
+# 3. array.ravel() - also converts an array into 1D.
+# But it returns a view whenever possible.
+# That means modifying it usually changes the original array.
+
+resh3 = np.array([
+    [10,20,30],
+    [40,50,80]
+])
+new_resh3 = resh3.ravel()
+print(f'\nRaveled : {new_resh3}')
+new_resh3[0] = 100
+print(f'\nOriginal : {resh3}')
+
+# 4. array.transpose() - transpose() swaps the axes (dimensions) of an array.
+
+resh4 = np.array([
+    [10,20,30],
+    [40,50,80]
+])
+new_resh4 = resh4.transpose()
+print(f'\nRaveled : {new_resh4}')
+new_resh3[0] = 100
+print(f'\nOriginal : {resh4}')
+
+# 5. np.expand_dims(array,axis) - Adds a new dimension (axis) to an array.
+# Useful for machine learning and deep learning.
+
+resh5 = np.array([10,20,30,40,50,60,70,80,90,100])
+new_resh5 = np.expand_dims(resh5,axis = 0)
+print(f'\nAdded : {new_resh5}')
+print(f'\nShape : {new_resh5.shape}')
+
+new_resh5 = np.expand_dims(resh5,axis = 1)
+print(f'\nAdded : {new_resh5}')
+print(f'\nShape : {new_resh5.shape}')
+
+# 6. np.squeeze(array) - Removes dimensions whose size is 1. It is the opposite of expand_dims().
+
+resh6 = np.array([[[1,2,3]]])
+new_resh6 = np.squeeze(resh6)
+print(f'\nSqueezed : {new_resh6}')
+print(f'\nShape : {new_resh6.shape}')
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Joining arrays - Joining arrays means combining two or more arrays into a single array.
+print(f'\nArray joining ------------------------------------------------------------------------------------------------------------------------------')
+
+# 1. np.concatenate((array1, array2), axis=0) - concatenate() joins two or more arrays along an existing axis. It does NOT create a new dimension.
+# axis=0 → Join row-wise (vertically)
+# axis=1 → Join column-wise (horizontally)
+
+arra1 = np.array([10,20,30])
+arra2 = np.array([40,50,60])
+
+arra3 = np.array([
+    [70,80],
+    [90,100]
+])
+arra4 = np.array([
+    [110,120],
+    [130,140]
+])
+
+row = np.concatenate((arra1,arra2),axis = 0)
+colm = np.concatenate((arra3,arra4),axis = 1)
+
+print(f'\nRow wise : {row}')
+print(f'\nColumn wise : {colm}')
+
+# 2. np.stack((array1, array2), axis=0) - stack() joins arrays by creating a new axis (dimension). Unlike concatenate(), it adds one more dimension.
+
+arra1 = np.array([10,20,30])
+arra2 = np.array([40,50,60])
+
+arra3 = np.array([
+    [70,80],
+    [90,100]
+])
+arra4 = np.array([
+    [110,120],
+    [130,140]
+])
+
+row = np.stack((arra1,arra2),axis = 0)
+colm = np.stack((arra3,arra4),axis = 1)
+
+print(f'\nRow wise : {row}')
+print(f'\nColumn wise : {colm}')
+
+# 3. np.vstack((array1, array2)) - vstack() means Vertical Stack. It stacks arrays row-wise (top to bottom).
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+result = np.vstack((a, b))
+print(f'\nVstack1 : {result}')
+
+a = np.array([
+    [1,2],
+    [3,4]
+])
+b = np.array([
+    [5,6],
+    [7,8]
+])
+result = np.vstack((a,b))
+print(f'\nVstack2 : {result}')
+
+# 4. np.hstack((array1,array2)) - hstack() means Horizontal Stack. It joins arrays column-wise (side by side).
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+result = np.hstack((a,b))
+print(f'\nHstack1 : {result}')
+
+a = np.array([
+    [1,2],
+    [3,4]
+])
+b = np.array([
+    [5,6],
+    [7,8]
+])
+result = np.hstack((a,b))
+print(f'\nHstack2 : {result}')
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Splitting arrays - Splitting means dividing one large array into multiple smaller arrays.
+print(f'\nArray splitting ------------------------------------------------------------------------------------------------------------------------------')
+
+# 1. np.split() - it divides an array into equal-sized subarrays.
