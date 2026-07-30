@@ -610,4 +610,62 @@ print(f'\nHstack2 : {result}')
 # Splitting arrays - Splitting means dividing one large array into multiple smaller arrays.
 print(f'\nArray splitting ------------------------------------------------------------------------------------------------------------------------------')
 
-# 1. np.split() - it divides an array into equal-sized subarrays.
+# 1. np.split(array,indices) - it divides an array into equal-sized subarrays.
+
+arr = np.array([10, 20, 30, 40, 50, 60])
+result = np.split(arr, 3)
+print(f'\nSplitted : {result}')
+
+arr = np.array([10,20,30,40,50,60])
+result = np.split(arr, [2,4])
+print(f'\nSplitted : {result}')
+
+'''
+
+Indices [2,4] mean:
+
+First part → before index 2
+Second part → index 2 to index 4
+Third part → after index 4
+
+'''
+
+# 2. np.array_split(array, sections) - np.array_split() also splits arrays, but it does not require equal-sized parts.
+# If equal division isn't possible, NumPy distributes the extra elements among the first few subarrays.
+
+arr = np.array([1,2,3,4,5])
+result = np.array_split(arr, 2)
+print(f'\nArray Splitted : {result}')
+
+arr = np.array([10,20,30,40,50,60,70])
+result = np.array_split(arr, 3)
+print(f'\nArray Splitted : {result}')
+
+arr = np.array([10,20,30,40,50,60])
+result = np.array_split(arr, [2,5])
+print(f'\nIndices Splitted : {result}')
+
+# 2D array splitting (axis = 0) - rows are divided into groups.
+arr = np.array([
+    [1,2],
+    [3,4],
+    [5,6],
+    [7,8]
+])
+
+result = np.split(arr, 2, axis=0)
+print(f'\Rows grouped : {result}')
+
+
+# 2D array splitting (axis = 1) - columns are divided into groups.
+arr = np.array([
+    [1,2,3,4],
+    [5,6,7,8]
+])
+result = np.split(arr, 2, axis=1)
+print(f'\nColumns grouped : {result}')
+
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Searching - Searching functions in NumPy help you find elements or positions in an array based on a condition.
+print(f'\nArray searching ------------------------------------------------------------------------------------------------------------------------------')
