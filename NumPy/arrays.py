@@ -759,3 +759,85 @@ Here, np.argsort() finds the index of the highest probability, which corresponds
 This is a common pattern in machine learning and deep learning when working with prediction scores.
 
 '''
+#------------------------------------------------------------------------------------------------------------------------------
+
+# Random module
+print(f'\nRandom module ------------------------------------------------------------------------------------------------------------------------------')
+
+# The np.random module is used to generate random numbers. 
+# It is heavily used in AI, Machine Learning, and Deep Learning for tasks like 
+# initializing model weights, shuffling data, splitting datasets, sampling data, and generating random inputs.
+
+# 1. np.random.seed(seed_value) - Sets a seed (starting point) for the random number generator so that you get the same random numbers every time you run the code.
+
+np.random.seed(42)
+print(f'\nSeed : {np.random.randint(1, 10, 5)}')
+
+# 2. np.random.rand(shape) - Generates random floating-point numbers uniformly distributed between 0 (inclusive) and 1 (exclusive).
+
+print(f'\nRand : {np.random.rand(5)}') # the 5 represents the size - the no. of elements
+print(f'\nRand 2D : {np.random.rand(2,3)}')
+
+# 3. np.random.randn(shape) - Generates random numbers from a standard normal (Gaussian) distribution.
+# Mean = 0
+# Standard Deviation = 1
+# Unlike rand(), values can be negative, zero, or positive.
+
+print(f'\nRandn : {np.random.randn(5)}')
+print(f'\nRandn 2D : {np.random.randn(2,3)}')
+
+# 4. np.random.randint(low,high,size) - Generates random integers within a specified range. # high is exclusive
+
+print(f'\nRandint : {np.random.randint(1, 10, 5)}')
+print(f'Randint 2D : {np.random.randint(0, 100, (2, 3))}')
+
+# 5. np.random.choice(array,size) - Randomly selects element(s) from an array or list.
+
+fruits = ["Apple", "Banana", "Orange", "Mango"]
+print(f'\nChoice : {np.random.choice(fruits)}')
+print(f'\nChoice multiple : {np.random.choice(fruits, size=3)}')
+
+# Each fruit appears only once.
+print(f'\nChoice without replacement : {np.random.choice(fruits, size=3, replace=False)}')
+
+# 6. np.shuffle(array) - Randomly shuffles the elements of an array in-place. In-place means the original array is modified.
+
+arr = np.array([1, 2, 3, 4, 5])
+np.random.shuffle(arr)
+print(f'\nShuffled : {arr}')
+
+# 7. np.permutation(array) - Returns a shuffled copy of an array. Unlike shuffle(), the original array is not changed.
+
+arr = np.array([1, 2, 3, 4, 5])
+new_arr = np.random.permutation(arr)
+print("\nOriginal:", arr)
+print("\nShuffled:", new_arr)
+
+# 8. np.random.uniform(low,high,size) - Generates random numbers uniformly between a given range. # Every value has an equal chance of being selected.
+
+print(f'\nUniform : {np.random.uniform(10, 20, 5)}')
+# 10 ≤ value < 20
+
+# Function	                -  Range
+# np.random.rand()	        -  Always 0 to 1
+# np.random.uniform(a, b)	-  Any range a to b
+
+# 9. np.random.defalut_rng(seed) -  Creates a random number generator object. This is the modern and recommended way to generate random numbers in NumPy (NumPy 1.17+).
+
+rng = np.random.default_rng(42)
+print(f'\nDefault_rng : {rng.integers(1, 10, 5)}')
+
+# 10. np.random.normal(loc,scale,size)
+
+# loc → Mean (average)
+# scale → Standard deviation (how spread out the values are)
+# size → Number of random values to generate
+
+arr = np.random.normal(loc = 50, scale = 5, size = 10)
+print(f'\nNormal : {arr}')
+
+# loc =  50 → Average value is 50.
+# scale = 5 → Most values will be within about 5 units of 50.
+# size = 10 → Generate 10 random numbers.
+
+#------------------------------------------------------------------------------------------------------------------------------
