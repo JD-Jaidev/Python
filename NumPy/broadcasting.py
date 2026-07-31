@@ -51,7 +51,9 @@ print(array1 * array2)
 # 1D + 2D broadcasting
 
 array1 = np.array([10,20,30,40,50]) # first add this with 1st row and then 2nd row of array2
-array2 = np.array()
+array2 = np.array([[1,2,3,4,5],
+                   [6,7,8,9,10]
+])
 
 print(array1.shape)
 print(array2.shape)
@@ -71,3 +73,28 @@ print(f'\Vectorized operations -------------------------------------------------
 
 # A vectorized operation means performing an operation on an entire NumPy array at once, instead of using loops.
 # NumPy executes these operations using optimized C code internally, making them much faster than Python for loops.
+
+print('\nWithout vectorization')
+numbers = [1,2,3,4]
+result = []
+for i in numbers:
+    result.append(i * 2)
+print(result)
+
+print('\nWith vectorization')
+numbers = np.array([1,2,3,4])
+result = numbers * 2
+print(result)
+
+a = np.array([0, 30, 60, 90])
+print(f'\nVectorized operations using functions : {np.sin(np.radians(a))}')
+
+'''
+
+Concept	                -  Meaning
+Broadcasting	        -  Allows arrays of different but compatible shapes to work together without manually resizing them.
+Broadcasting Rules	    -  Compare dimensions from the right; dimensions are compatible if they are equal or one is 1; missing dimensions are treated as 1.
+Shape Compatibility	    -  Two arrays can be broadcast only if every compared dimension satisfies the broadcasting rules.
+Vectorized Operations	-  Apply an operation to every element of an array at once, avoiding explicit Python loops for faster and cleaner code.
+
+'''
