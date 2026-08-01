@@ -200,5 +200,36 @@ U - Contains the left singular vectors. These describe one set of directions in 
 S - Contains the singular values. These tell you how important each direction is. A larger singular value means that direction carries more information.
 Vt - Contains the right singular vectors (transposed). These describe another set of directions used in the decomposition.
 
+What does SVD actually do?
+It breaks a matrix into
+
+A = U × Σ × Vᵀ
+
+where
+U → Rotation
+Σ (Sigma) → Scaling
+Vᵀ → Another rotation
+
+Think of it like this:
+Original Matrix
+       │
+       ▼
+Rotate → Stretch → Rotate
+This makes many matrix operations easier and more stable.
+
+Why is SVD important?
+SVD is one of the most important algorithms in linear algebra because it works for almost every matrix, even when inverse or eigenvalues cannot be computed easily.
+
+svd() is very commonly used in AI, Machine Learning, and Data Science.
+Applications include:
+
+-  Principal Component Analysis (PCA)
+-  Recommendation Systems (Netflix, Amazon)
+-  Image Compression
+-  Dimensionality Reduction
+-  Natural Language Processing (LSA)
+-  Noise Removal
+-  Feature Extraction
+
 '''
 
