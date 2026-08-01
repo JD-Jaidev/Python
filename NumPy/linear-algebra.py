@@ -107,3 +107,83 @@ print(f'\nnumpy.linalg ---------------------------------------------------------
 # Contains advanced linear algebra functions.
 
 import numpy.linalg as la
+
+# 1. la.inv(array) - Computes the inverse of a square matrix. 
+a = np.array([[1,2],
+              [3,4]])
+print(f'\nInverse : {la.inv(a)}')
+
+# 2. la.det(array) - Computes the determinant of a square matrix.
+
+a = np.array([[1,2],
+              [3,4]])
+print(f'\nDeterminant : {la.det(a)}')
+
+# 3. la.norm(array) - Computes the length (magnitude) of a vector or matrix.
+
+a = np.array([3,4])
+print(f'\nMagnitude : {la.norm(a)}')
+
+'''
+√(3²+4²)
+= √25
+= 5
+'''
+
+# 4. la.solve(array1 , array2) - Solves a system of linear equations.
+
+A = np.array([[1,1], # coefficients
+              [2,1]])
+B = np.array([5,8]) # equal to value
+print(f'\Solve : {la.solve(A,B)}')
+
+'''
+A → Coefficient matrix (must be a square matrix)
+B → Constant values (right-hand side)
+Returns → Solution vector (x)
+
+1x + 1y = 5
+2x + 1y = 8
+'''
+
+# 5. eig(array) - Eigen values and vectors 
+
+'''
+numpy.linalg.eig() is used to find the eigenvalues and eigenvectors of a square matrix.
+Eigenvalues tell you how much a transformation stretches or shrinks in certain directions, while eigenvectors tell you those special directions.
+
+Eigen values - These represent the amount by which the matrix stretches or compresses along certain directions.
+Eigen vectors - These are the special directions that remain unchanged except for scaling.
+
+Normally, multiplying a vector by a matrix changes both its length and direction.
+
+---> For an eigenvector,
+
+A × v = λ × v
+
+where
+
+A = Matrix
+v = Eigenvector
+λ (lambda) = Eigenvalue
+
+The vector keeps the same direction, but its length changes by the eigenvalue.
+
+'''
+
+A = np.array([[4, 2], [1, 3]]) 
+values, vectors = la.eig(A) 
+print(f'\nEigen values :{values}') # each elmnt is an eigen value
+print(f'\nEigen vectors : {vectors}') # every coln is an eigen vector
+
+# 6. svd(array) - numpy.linalg.svd() performs Singular Value Decomposition (SVD). It decomposes a matrix into three smaller matrices.
+
+'''
+
+U, S, Vt = la.svd(A)
+
+U → Left singular vectors
+S → Singular values
+Vt → Right singular vectors (transposed)
+
+'''
