@@ -187,3 +187,18 @@ S → Singular values
 Vt → Right singular vectors (transposed)
 
 '''
+
+A = np.array([[1, 2], [3, 4]]) 
+U, S, Vt = la.svd(A) 
+print('\nLeft singular vectors : ',U) 
+print('\nSingular values :',S) 
+print('\nRight singular vectors : ',Vt)
+
+'''
+
+U - Contains the left singular vectors. These describe one set of directions in the transformation.
+S - Contains the singular values. These tell you how important each direction is. A larger singular value means that direction carries more information.
+Vt - Contains the right singular vectors (transposed). These describe another set of directions used in the decomposition.
+
+'''
+
