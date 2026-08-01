@@ -8,7 +8,7 @@ print(f'\nLinear algebra')
 # In AI, Machine Learning, Computer Vision, and Deep Learning, almost everything is represented as matrices (datasets, images, neural network weights, embeddings, etc.).
 
 #------------------------------------------------------------------------------------------------------------------------------ 
-# 1. Matrix multipplication
+# 1. Matrix multiplication
 print(f'\nMatrix multiplication ------------------------------------------------------------------------------------------------------------------------------')
 
 # 1. np.dot() -
@@ -18,4 +18,35 @@ Performs the dot product.
 2D arrays → Matrix multiplication.
 Higher dimensions → More advanced behavior.
 '''
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+print(f'\nDot product : {np.dot(a,b)}')
+
+# Eg - matrices
+a = np.array([[1,2],
+              [3,4]])
+b = np.array([[5,6],
+              [7,8]])
+print(f'\nMatrix dot product : {np.dot(a,b)}') # it performs like normal matrix multplication
+
+# 2. np.matmul(array1,array1) - Specifically performs matrix multiplication.
+
+a = np.array([[1,2],
+              [3,4]])
+b = np.array([[5,6],
+              [7,8]])
+print(f'\nMatmull : {np.matmul(a,b)}')
+
+# 3. @ operator print(array1 @ array2) - @ is simply a shorter way to write matmul().
+
+a = np.array([[1,2],
+              [3,4]])
+b = np.array([[5,6],
+              [7,8]])
+print(f'\n@ Operator : {a @ b}')
+
+#------------------------------------------------------------------------------------------------------------------------------ 
+# 1. Matrix transformation
+print(f'\nMatrix transformation ------------------------------------------------------------------------------------------------------------------------------')
 
