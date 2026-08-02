@@ -29,6 +29,12 @@ Mean = 0
 Standard deviation = 1
 Formula = (x - mean) / std
 
+AI Use - 
+Logistic Regression
+PCA
+Neural Networks
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 
 '''
 
