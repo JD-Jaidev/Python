@@ -127,9 +127,14 @@ Without activation functions, a neural network would behave like a simple linear
 ----------------------------------------------------------------------------------------------------------------------------------------------
 16. Random Weight Initialization -
 AI models start with random weights before training.
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 17. Loss Calculation -
 Used to measure prediction error (Mean Squared Error).
+----------------------------------------------------------------------------------------------------------------------------------------------
+18. Data Shuffling -
+Prevents the model from learning patterns based on data order.
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -235,3 +240,5 @@ actual = np.array([1,2,3])
 pred = np.array([1.2,1.8,2.9])
 loss = np.mean((actual - pred)**2)
 print(f'\nLoss calculation : {loss}')
+
+# 18. Data shuffling -
