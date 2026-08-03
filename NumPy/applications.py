@@ -134,7 +134,8 @@ Used to measure prediction error (Mean Squared Error).
 18. Data Shuffling -
 Prevents the model from learning patterns based on data order.
 ----------------------------------------------------------------------------------------------------------------------------------------------
-
+19. Finding predictions -
+Used to select the class with the highest predicted probability.
 
 
 
@@ -242,3 +243,11 @@ loss = np.mean((actual - pred)**2)
 print(f'\nLoss calculation : {loss}')
 
 # 18. Data shuffling -
+data = np.arange(10)
+np.random.shuffle(data)
+print(f'\nData shuffling : {data}')
+
+# 19. Finding predictions -
+prob = np.array([0.2,0.6,0.2])
+prediction = np.argmax(prob)
+print(f'\nPredictions : {prediction}') # np.argmax() returns the index of the largest value in the array.
