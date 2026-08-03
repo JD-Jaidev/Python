@@ -39,7 +39,7 @@ Almost every neural network layer performs matrix multiplication.
 
 AI Use -
 input x weights
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 5. Dot Products -
 Measures how similar two vectors are.
 
@@ -47,7 +47,7 @@ AI Use -
 Neural Networks
 Similarity calculations
 Embeddings
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 6. Distance Calculations -
 Measures how far apart two points are.
 
@@ -55,7 +55,7 @@ AI Use -
 KNN
 Clustering
 Recommendation Systems
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 7. Cosine Similarity - cos = (A·B) / (||A|| ||B||))
 Measures the angle between vectors instead of distance.
 
@@ -64,7 +64,7 @@ Chatbots
 Search Engines
 Sentence Embeddings
 Recommendation Systems
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 8. Images as Arrays -
 Computers store images as NumPy arrays.
 
@@ -72,6 +72,25 @@ AI Use -
 OpenCV
 Image Classification
 Object Detection
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 '''
 
