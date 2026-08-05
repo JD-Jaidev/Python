@@ -69,7 +69,11 @@ Excel files (.xlsx) can also be loaded into Pandas.
 6. Creating Data from JSON Files -
 JSON (JavaScript Object Notation) stores data in a key-value format and is commonly used by APIs.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+3. Viewing Data in Pandas - 
+After loading a dataset into a DataFrame, the first step is usually to inspect or explore the data. 
+Pandas provides several built-in functions and attributes to quickly understand the structure, size, columns, data types, and summary statistics of your dataset.
 
 '''
 
